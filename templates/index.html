@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Document Screening System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">AI<span>Shield</span></div>
+        <p>Intelligent Document Screening</p>
+    </nav>
+
+    <main class="container">
+
+        <section class="heading">
+            <h1>AI-Based Fake Identity and Document Screening System</h1>
+
+            <p>
+                An intelligent platform for screening identity documents
+                using OCR, image processing and AI-based analysis.
+            </p>
+        </section>
+
+        <section class="upload-card">
+
+            <div class="upload-icon">📄</div>
+
+            <h2>Upload Your Document</h2>
+
+            <p>
+                Select a sample document to begin the screening process.
+            </p>
+
+            <form action="/upload" method="POST"
+                  enctype="multipart/form-data">
+
+                <input type="file"
+                       name="document"
+                       accept=".jpg,.jpeg,.png"
+                       required>
+
+                <button type="submit">
+                    Start Document Screening
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="info-grid">
+
+            <div class="info-card">
+                <h3>01. OCR Extraction</h3>
+                <p>
+                    Extract readable text from uploaded documents.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>02. AI Analysis</h3>
+                <p>
+                    Examine document information for possible
+                    inconsistencies and suspicious indicators.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>03. Screening Report</h3>
+                <p>
+                    Display screening findings and identify cases
+                    that require human review.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        AI-Based Fake Identity and Document Screening System
+        <br>
+        Academic Project | AI-Powered Document Screening
+    </footer>
+
+</body>
+</html>

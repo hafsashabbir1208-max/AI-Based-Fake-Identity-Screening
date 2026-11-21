@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Screening Results</title>
+</head>
+<body>
+    <h1>Document Screening Results</h1>
+
+    <h3>Uploaded Document: {{ filename }}</h3>
+
+    <h2>Extracted Text</h2>
+    <h2>Screening Result</h2>
+
+<p>{{ screening_result }}</p>
+{% if name_issue %}
+    <p>Name Validation: {{ name_issue }}</p>
+{% else %}
+    <p>Name Validation: Valid</p>
+{% endif %}
+{% if date_issue %}
+    <p>Date Validation: {{ date_issue }}</p>
+{% else %}
+    <p>Date Validation: Valid date format</p>
+{% endif %}
+{% if id_issue %}
+    <p>Document ID Validation: {{ id_issue }}</p>
+{% else %}
+    <p>Document ID Validation: Valid format</p>
+{% endif %}
+{% if country_issue %}
+    <p>Country Validation: {{ country_issue }}</p>
+{% else %}
+    <p>Country Validation: Valid</p>
+{% endif %}
+
+{% if missing_fields %}
+    <h3>Missing Fields:</h3>
+    <ul>
+        {% for field in missing_fields %}
+            <li>{{ field }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+    <pre>{{ extracted_text }}</pre>
+
+    <a href="/">Upload Another Document</a>
+</body>
+</html>
